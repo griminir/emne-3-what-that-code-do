@@ -18,7 +18,9 @@ while (!string.IsNullOrWhiteSpace(text))
         if (counts[i] > 0)
         {
             var character = (char)i;
-            Console.WriteLine(character + " - " + (counts[i]/ (double)allChars) * 100 + '%');
+            var output = character + " - " + (counts[i]/ (double)allChars) * 100 + '%';
+            Console.CursorLeft = Console.BufferWidth - output.Length - 1;
+            Console.WriteLine(output);
         }
     }
 }
